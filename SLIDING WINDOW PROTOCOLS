@@ -1,0 +1,28 @@
+#include<stdio.h>  
+int main()  
+{  
+    int n, size, sum=0, max = 0, j;  
+    printf("Enter the size of the array: ");  
+    scanf("%d", &n);  
+    int arr[n], i;  
+    printf("Enter the elements of the array: ");  
+    for(i = 0; i < n; i++)  
+    {  
+        scanf("%d", &arr[i]);  
+    }  
+    printf("Enter the size of sub-array: ");  
+    scanf("%d", &size);  
+    for(i = 0; i < (n - size) + 1; i++)  
+    {  
+        sum = 0;  
+        for(j = i; j < i + size; j++)  
+        {  
+            sum = sum + arr[j];  
+        }  
+        if(sum > max)  
+        {  
+            max = sum;  
+        }  
+    }  
+    printf("The maximum sum of %d consecutive elements of the array: %d", size, max);  
+}  
